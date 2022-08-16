@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<div th:each="order : ${orders}">
+    <a th:href="@{/orders/{id}(id=${order.getId()})}"
+       th:text="${order.getCategory() + ', ' + order.getProduct_name()}">order</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/orders/new">Create new order</a>
+
+<br/>
+<hr/>
+
+<a href="/customers">Customers</a>
+
+</body>
+</html>
